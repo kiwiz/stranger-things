@@ -22,7 +22,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: [
               require('@babel/plugin-proposal-object-rest-spread'),
               'react-hot-loader/babel',
