@@ -1,17 +1,10 @@
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
-  entry: {
-    'main.css': [
-      path.resolve(__dirname, 'assets/css/main.css'),
-    ],
-    'bundle.js': [
-      path.resolve(__dirname, 'assets/js/index.js'),
-    ]
-  },
+  entry: path.resolve(__dirname, 'assets/js/index.js'),
   output: {
-    filename: '[name]',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -29,16 +22,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-          /*
-        resolve: {
-          modules: [
-            'node_modules',
-            path.resolve(__dirname, 'assets/css')
-          ],
-        },
-        */
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+  ],
 }
