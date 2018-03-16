@@ -18,3 +18,10 @@ Package
 ```
 yarn run build
 ```
+
+## Development ##
+
+Start up the dev server
+```
+yarn run dev
+```

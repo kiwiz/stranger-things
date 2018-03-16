@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
@@ -6,6 +7,11 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
   },
   module: {
     rules: [
@@ -16,7 +22,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: [require('@babel/plugin-proposal-object-rest-spread')]
+            plugins: [
+              require('@babel/plugin-proposal-object-rest-spread'),
+              'react-hot-loader/babel',
+            ]
           }
         }
       },
@@ -40,7 +49,7 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
-    'react-hot-loader/babel',
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
-  devtool: 'source-map',
 }
