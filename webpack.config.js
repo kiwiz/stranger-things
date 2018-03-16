@@ -22,16 +22,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              minimize: true,
+            }
+          }
+        ],
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
   ],
+  devtool: 'source-map',
 }
