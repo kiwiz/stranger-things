@@ -51,6 +51,13 @@
     "@babel/helper-explode-assignable-expression" "7.0.0-beta.42"
     "@babel/types" "7.0.0-beta.42"
 
+"@babel/helper-builder-react-jsx@7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.0.0-beta.42.tgz#719510a0aa45e9b02909f2e252420e62900c406a"
+  dependencies:
+    "@babel/types" "7.0.0-beta.42"
+    esutils "^2.0.0"
+
 "@babel/helper-call-delegate@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.yarnpkg.com/@babel/helper-call-delegate/-/helper-call-delegate-7.0.0-beta.42.tgz#53294eb8c5e6e53af3efda4293ff3c1237772d37"
@@ -222,6 +229,12 @@
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.42"
 
+"@babel/plugin-syntax-jsx@7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.42.tgz#92ef7807bbec0e12a49815a409822262cbaa7ddd"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.42"
+
 "@babel/plugin-syntax-object-rest-spread@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.0.0-beta.42.tgz#aa789865abe78a4895d4a0be9de4d34b1a1d5063"
@@ -376,6 +389,34 @@
     "@babel/helper-get-function-arity" "7.0.0-beta.42"
     "@babel/helper-plugin-utils" "7.0.0-beta.42"
 
+"@babel/plugin-transform-react-display-name@7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.0.0-beta.42.tgz#48766efd74d65fb9116ede6354f73299d73e66b9"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.42"
+
+"@babel/plugin-transform-react-jsx-self@7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.0.0-beta.42.tgz#f471407f6d87f5456db716ed7ed24dff6864c3de"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.42"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.42"
+
+"@babel/plugin-transform-react-jsx-source@7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.0.0-beta.42.tgz#2c41adf060e76b9f0652591cfcdaddd192a21898"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.42"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.42"
+
+"@babel/plugin-transform-react-jsx@7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.0.0-beta.42.tgz#a25731396ca87b07f10362a950deab4526345fac"
+  dependencies:
+    "@babel/helper-builder-react-jsx" "7.0.0-beta.42"
+    "@babel/helper-plugin-utils" "7.0.0-beta.42"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.42"
+
 "@babel/plugin-transform-regenerator@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-regenerator/-/plugin-transform-regenerator-7.0.0-beta.42.tgz#af164751340a7e513c53e614c6f1f90279e459ef"
@@ -465,6 +506,17 @@
     browserslist "^3.0.0"
     invariant "^2.2.2"
     semver "^5.3.0"
+
+"@babel/preset-react@^7.0.0-beta.42":
+  version "7.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.0.0-beta.42.tgz#e7a15ee1ab5305d5f8efd43cce01123e2bfdcc9d"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.42"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.42"
+    "@babel/plugin-transform-react-display-name" "7.0.0-beta.42"
+    "@babel/plugin-transform-react-jsx" "7.0.0-beta.42"
+    "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.42"
+    "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.42"
 
 "@babel/template@7.0.0-beta.42":
   version "7.0.0-beta.42"
@@ -2610,7 +2662,7 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
-esutils@^2.0.2:
+esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
@@ -5297,7 +5349,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.0:
+prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
