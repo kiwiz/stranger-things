@@ -21,6 +21,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            cacheDirectory: true,
             presets: ['@babel/preset-env'],
             plugins: [
               require('@babel/plugin-proposal-object-rest-spread'),
