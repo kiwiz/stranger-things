@@ -10,7 +10,7 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: '.',
     hot: true,
   },
   module: {
