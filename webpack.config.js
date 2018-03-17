@@ -7,26 +7,27 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
   },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    hot: true,
+  serve: {
+    dev: {
+      compress: true,
+      publicPath: '/dist/',
+    },
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         include: path.resolve(__dirname, 'assets/js'),
         use: {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: [
               require('@babel/plugin-proposal-object-rest-spread'),
-              'react-hot-loader/babel',
-            ]
+            ],
           }
         }
       },
@@ -45,12 +46,14 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 }
