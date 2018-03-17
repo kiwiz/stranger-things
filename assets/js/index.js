@@ -1,12 +1,12 @@
 import { render } from 'react-dom'
 import { createStore } from 'redux'
-import Root from './components/Root'
+import App from './components/App'
 import rootReducer from './reducers/rootReducer'
 
 const store = createStore(rootReducer)
 
 render(
-    Root(store),
+    App(store),
     document.getElementById('root')
 )
 
