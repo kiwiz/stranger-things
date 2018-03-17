@@ -1,25 +1,25 @@
 import React from 'react'
 
 const Parallax = (props) => (
-    <div class="parallax">
-        <div class="parallax-top-left" tabindex="1"></div>
-        <div class="parallax-top-right" tabindex="2"></div>
-        <div class="parallax-bottom-left" tabindex="3"></div>
-        <div class="parallax-bottom-right" tabindex="4"></div>
-        <div class="parallax-content">
+    <div className="parallax">
+        <div className="parallax-top-left" tabindex="1"></div>
+        <div className="parallax-top-right" tabindex="2"></div>
+        <div className="parallax-bottom-left" tabindex="3"></div>
+        <div className="parallax-bottom-right" tabindex="4"></div>
+        <div className="parallax-content">
             {props.children}
         </div>
     </div>
 )
 
 Parallax.Front = (props) => (
-    <div class="parallax-front">
+    <div className="parallax-front">
         {props.children}
     </div>
 )
 
 Parallax.Front = (props) => (
-    <div class="parallax-back">
+    <div className="parallax-back">
         {props.children}
     </div>
 )
