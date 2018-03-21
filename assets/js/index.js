@@ -1,15 +1,22 @@
 import { render } from 'react-dom'
 import { createStore } from 'redux'
-import Root from './components/Root'
+import App from './components/App'
 import rootReducer from './reducers/rootReducer'
 
-const store = createStore(rootReducer)
+const initialState = {
+  events: [
+    {title: 'Helena'},
+    {title: 'Kai'}
+  ]
+}
+
+const store = createStore(rootReducer, initialState)
 
 render(
-    Root(store),
+    App(store),
     document.getElementById('root')
 )
 
 if (module.hot) {
-    module.hot.accept(render)
+    module.hot.accept('./index.js', render)
 }

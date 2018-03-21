@@ -1,10 +1,11 @@
 import React from 'react'
-import Event from './Event'
- 
-const App = () => (
-    <div>
-        <Event title="Helena" />
-    </div>
+import { Provider } from 'react-redux'
+import VisibleEventList from '../containers/VisibleEventList'
+
+const App = (store) => (
+  <Provider store={store}>
+      <VisibleEventList />
+  </Provider>
 )
- 
+
 export default App
