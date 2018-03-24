@@ -1,14 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Columns from './spectre/Columns'
+import Column from './spectre/Column'
 import Event from './Event'
 
 const EventList = ({events}) => {
   return (
-    <div>
-      {events.map(event =>
-        <Event title={event.title} />
-      )}
-    </div>
+    <Columns>
+      {events.map(event => <Column classNames={[
+        'col-xs-12',
+        'col-sm-6',
+        'col-md-4',
+        'col-3',
+      ]}>
+        <Event
+          title={event.title}
+          subtitle={event.subtitle}
+          description={event.description}
+          thumbnail={event.thumbnail}
+          image={event.image}
+        />
+      </Column>)}
+    </Columns>
   )
 }
 
