@@ -2,12 +2,10 @@ import { render } from 'react-dom'
 import { createStore } from 'redux'
 import App from './components/App'
 import rootReducer from './reducers/rootReducer'
+import articles from './articles'
 
 const initialState = {
-  events: [
-    {title: 'Helena'},
-    {title: 'Kai'}
-  ]
+    events: articles.events
 }
 
 const store = createStore(rootReducer, initialState)
