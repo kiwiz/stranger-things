@@ -4,7 +4,7 @@ import VisibleEventList from '../containers/VisibleEventList'
 
 const App = (store) => (
   <Provider store={store}>
-      <VisibleEventList />
+    <VisibleEventList />
   </Provider>
 )
 
