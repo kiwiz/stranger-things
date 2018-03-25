@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const Card = (props) => (
   <div className="card">
@@ -11,14 +12,21 @@ Card.propTypes = {
   children: PropTypes.node,
 }
 
-Card.Image = (props) => (
-  <div className="card-image">
-    {props.children}
-  </div>
-)
+Card.Image = (props) => {
+  const { className, ...other } = props
+
+  return (
+    <div className="card-image">
+      <img className={classNames(
+        'img-responsive',
+        className
+      )} {...other} />
+    </div>
+  )
+}
 
 Card.Image.propTypes = {
-  children: PropTypes.node,
+  src: PropTypes.string.isRequired,
 }
 
 Card.Header = (props) => (

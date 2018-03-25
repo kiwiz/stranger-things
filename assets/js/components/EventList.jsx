@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Columns from './spectre/Columns'
-import Column from './spectre/Column'
+import { Columns, Column } from './spectre'
 import Event from './Event'
 
 const EventList = ({events}) => {
@@ -13,13 +12,7 @@ const EventList = ({events}) => {
         'col-md-4',
         'col-3',
       ]}>
-        <Event
-          title={event.title}
-          subtitle={event.subtitle}
-          description={event.description}
-          thumbnail={event.thumbnail}
-          image={event.image}
-        />
+        <Event event={event} />
       </Column>)}
     </Columns>
   )
