@@ -4,7 +4,10 @@ module.exports = {
         "commonjs": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -18,7 +21,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            2
+            4
         ],
         "linebreak-style": [
             "error",
@@ -31,6 +34,6 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
     }
 };
