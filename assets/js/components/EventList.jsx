@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Columns, Column } from './spectre'
+import Columns from './spectre/Columns'
+import Column from './spectre/Column'
 import Event from './Event'
 
 const EventList = ({events}) => {
